@@ -1,7 +1,7 @@
 package Posy::Plugin::Log4perl;
 
 #
-# $Id: Log4perl.pm,v 1.2 2005/03/04 02:46:23 blair Exp $
+# $Id: Log4perl.pm,v 1.4 2005/03/07 15:02:45 blair Exp $
 #
 
 use 5.008001;
@@ -15,11 +15,11 @@ Posy::Plugin::Log4perl - Dispatch debug messages with Log::Log4perl
 
 =head1 VERSION
 
-This document describes Posy::Plugin::Log4perl version B<0.1>.
+This document describes Posy::Plugin::Log4perl version B<0.2>.
 
 =cut
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 =head1 SYNOPSIS
 
@@ -106,7 +106,13 @@ the logging.
 sub debug {
   my ($self, $level, $msg) = @_;
 
-  if (defined $logger and $level =~ /^\d+$/) {
+  if (
+      defined $logger and defined $level and
+      defined $self->{'debug_level'} and 
+      $level =~ /^\d+$/ and 
+      $level <= $self->{'debug_level'}
+     ) 
+  {
     if      ($level == 0) {
       $logger->fatal($msg);
     } elsif ($level == 1) {
@@ -127,6 +133,12 @@ sub debug {
 =head1 SEE ALSO
 
 L<Perl>, L<Posy>, L<Log::Log4perl>
+
+=head1 BUGS AND LIMITATIONS
+
+Please report any bugs or feature requests to
+C<bug-Posy-Plugin-Log4perl@rt.cpan.org> or through the web interface at 
+L<http://rt.cpan.org>.
 
 =head1 AUTHOR
 

@@ -1,4 +1,4 @@
-Posy::Plugin::Log4perl version 0.1
+Posy::Plugin::Log4perl version 0.2
 ==================================
 
 This module overrides the default Posy debug() method and dispatches

@@ -1,7 +1,7 @@
 Changes
-Makefile.PL
 MANIFEST
-README
-t/Posy-Plugin-Log4perl.t
-lib/Posy/Plugin/Log4perl.pm
 META.yml                                 Module meta-data (added by MakeMaker)
+Makefile.PL
+README
+lib/Posy/Plugin/Log4perl.pm
+t/Posy-Plugin-Log4perl.t

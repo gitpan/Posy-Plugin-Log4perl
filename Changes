@@ -2,6 +2,11 @@ Revision history for Perl extension Posy::Plugin::Log4perl.
 
 ---
 
+# 0.2  20050307
+
+  * BUGFIX The Posy debug level was being ignored, causing all debug
+    messages to be dispatched, regardless of the debug level.
+ 
 # 0.1  20050302
   * Initial release of Posy::Plugin::Log4perl
 
