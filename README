@@ -1,0 +1,42 @@
+Posy::Plugin::Log4perl version 0.1
+==================================
+
+This module overrides the default Posy debug() method and dispatches
+messages to Log::Log4perl.
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+  Posy
+  Posy::Core
+  Log::Log4perl
+  Test::More
+
+ACTIVATION
+
+Add this module to Posy's @plugins array, after Posy::Core.
+
+CONFIGURATION
+
+Configure Log4perl in "$config_dir/plugins/log4perl".  This is a
+Log4perl, *not* a Posy, configuration file.  See
+<http://search.cpan.org/dist/Log-Log4perl/> for more information on
+configuring Log4perl.
+
+COPYRIGHT AND LICENSE
+
+Copyright (C) 2005 by blair christensen.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
